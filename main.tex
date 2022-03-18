@@ -205,6 +205,71 @@ Linux includes batch jobs, which sometimes \mintinline{bash}{pip install} the sa
 \end{columns}
 \end{frame}
 
+\begin{frame}{More often useful when {\it comparing} two things}
+\vspace{0.25 cm}
+\Large
+\underline{Transition from ``old'' Awkward/Uproot/Coffea to ``new''}
+\vspace{0.5 cm}
+\begin{columns}
+\column{1.2\linewidth}
+\hspace{0.25 cm}\includegraphics[width=0.31\linewidth]{pip-allos-awkward-log.pdf}\includegraphics[width=0.31\linewidth]{pip-allos-uproot-log.pdf}\includegraphics[width=0.31\linewidth]{pip-allos-coffea-log.pdf}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Directed study: how are physicists using C++ and Python?}
+\vspace{0.5 cm}
+{\Large Analyze code in 11\,635 GitHub repos written by 2\,172 physicists:}
+
+\vspace{0.25 cm}
+\begin{enumerate}
+\item Ask GitHub which users forked CMSSW and call them ``CMS physicists.'' (CMSSW has been on GitHub for a long enough time to see trends.)
+\item Clone all of the physicists' repos (the ones that are not forks of something else).
+\item Search the code of these repos and count matches.
+\item Take care to exclude CMSSW configuration files, which are also Python.
+\end{enumerate}
+
+\begin{center}
+\includegraphics[width=0.5\linewidth]{github-api-website.png}
+\end{center}
+\end{frame}
+
+\begin{frame}{\only<1>{Language use: C++, Python, and Jupyter}\only<2>{Packages: ROOT, Scientific Python, Uproot/Awkward}}
+\vspace{0.25 cm}
+\textcolor{darkblue}{\mbox{\hspace{-0.5 cm}}\only<1>{Number of non-fork GitHub repos created by CMS physicists (users who forked CMSSW)}\only<2>{Same sample, now counting regex matches for \mintinline{python}{import XYZ}, \mintinline{python}{from XYZ import}, etc.}}
+
+\vspace{-0.35 cm}
+\begin{columns}
+\column{1.15\linewidth}
+\only<1>{\includegraphics[width=\linewidth]{gihub-language-fullstudy.pdf}}\only<2>{\includegraphics[width=\linewidth]{gihub-package-fullstudy.pdf}}
+\end{columns}
+\end{frame}
+
+\begin{frame}{This is an update of my earlier GitHub-CMSSW study}
+\vspace{0.5 cm}
+\large
+
+\begin{enumerate}\setlength{\itemsep}{0.35 cm}
+\item Inclusively counting ``repo that contains a C++ file'' or ``a Python file,'' rather than GitHub's exclusive determination of ``repo language.''
+
+\item Distinguishing between Python files that are CMSSW configurations and other Python files (GitHub doesn't).
+
+\item I've downloaded all the repos, so I can run my own regex searches, rather than relying on GitHub's.
+\end{enumerate}
+
+\vspace{0.5 cm}
+\begin{uncoverenv}<2->
+We can do more: run clang-tidy/pylint? Features of libraries used?
+
+\textcolor{blue}{\scriptsize\url{https://pivarski-princeton.s3.amazonaws.com/GitHub-CMSSW-user-nonfork-raw-data.tar}}
+\end{uncoverenv}
+\end{frame}
+
+\begin{frame}{Longer baseline: title/abstract matches in InspireHEP}
+
+
+
+\end{frame}
+
 
 
 \end{document}
