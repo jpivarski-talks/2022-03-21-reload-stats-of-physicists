@@ -56,9 +56,99 @@
 
 % START START START START START START START START START START START START START
 
-\begin{frame}{First slide}
+\begin{frame}{\mbox{ }}
+\large
 \vspace{0.5 cm}
-HERE
+\begin{columns}
+\column{0.7\linewidth}
+This is a talk about measuring {\it physicists}: what they talk about and what they do for computing.
+
+\vspace{0.25 cm}
+\uncover<2->{Measuring people, such as advertising click-throughs, seemed odd to me when I first went from physics to data science, since the events are {\it not} independent and it would be hard to quantify errors.}
+
+\vspace{0.25 cm}
+\uncover<3->{However, it can be a meaningful thing to do, taking all the caveats seriously, and certainly better than {\it guessing} or {\it assuming} we understand the community.}
+
+\vspace{0.25 cm}
+\uncover<4->{Inspiration: read Sharon Traweek's anthropological study of physicists at SLAC and KEK in the 1970's. Physicists can be data points!}
+
+\column{0.3\linewidth}
+\uncover<4->{\includegraphics[width=\linewidth]{traweek-beamtimes-and-lifetimes.jpg}}
+\end{columns}
 \end{frame}
+
+\begin{frame}{User needs are very different from my expectations, 5 years ago}
+\vspace{0.25 cm}
+\begin{columns}
+\column{1.12\linewidth}
+\only<1>{\includegraphics[width=\linewidth]{evolving-views-1.png}}\only<2>{\includegraphics[width=\linewidth]{evolving-views-2.png}}\only<3>{\includegraphics[width=\linewidth]{evolving-views-3.png}}\only<4>{\includegraphics[width=\linewidth]{evolving-views-4.png}}
+\end{columns}
+
+\vspace{0.1 cm}
+\uncover<2->{\Large\hfill Sought user input in focus groups, interviews, and surveys.}
+\end{frame}
+
+\begin{frame}{Ways to study humans}
+\vspace{0.1 cm}
+\textcolor{gray}{\scriptsize (Important note: I am not an expert. This is what I learned from college friends who went into social sciences.)}
+
+\large
+\vspace{0.1 cm}
+\begin{itemize}\setlength{\itemsep}{0.25 cm}
+\item \textcolor{darkblue}{Qualitative:}
+
+\vspace{0.05 cm}
+\begin{itemize}\large\setlength{\itemsep}{0.15 cm}
+\item \textcolor{darkblue}{Focus groups:} \normalsize most open to unexpected ideas. Want to keep the group size and mix such that participants are willing to speak up. Goal is to discover new {\it dimensions} of the vector space, not just points within it. \large
+
+\item \textcolor{darkblue}{One-on-one interviews:} \normalsize can go for depth, rather than breadth. Lacks the multiplying effect of responding to differing opinions. \large
+
+\item \textcolor{darkblue}{History/documents:} \normalsize observational, rather than experimental, but this method can reach further into the past. \large
+\end{itemize}
+
+\item \textcolor{darkblue}{Quantitative:}
+
+\vspace{0.05 cm}
+\begin{itemize}\large\setlength{\itemsep}{0.15 cm}
+\item \textcolor{darkblue}{Surveys:} \normalsize can have large datasets, at the cost of losing flexibility/openness to new ideas. Now you {\it are} filling in a vector space. \large
+
+\item \textcolor{darkblue}{Proxy metrics:} \normalsize can measure what people {\it do}, rather than what they {\it say}. \large
+\end{itemize}
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Proxy metrics: high statistics, cautious interpretation}
+\vspace{0.25 cm}
+\mbox{\hspace{0.75 cm}\includegraphics[width=\linewidth]{google-flu-trends.png}}
+
+\vspace{-3.35 cm}
+\hspace{-0.25 cm}\begin{minipage}{0.3\linewidth}
+{\bf Google Flu Trends}
+
+{\bf (2008--2015)}
+
+\small
+\vspace{0.25 cm}
+Count searches for
+
+things like ``fever,'' ``cough,''
+
+interpret as flu activity.
+
+\vspace{0.25 cm}
+(This was controversial.)
+\end{minipage}
+\vspace{3.35 cm}
+\end{frame}
+
+\begin{frame}{}
+
+
+
+
+\end{frame}
+
+
 
 \end{document}
