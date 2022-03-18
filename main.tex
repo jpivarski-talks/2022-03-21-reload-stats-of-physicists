@@ -122,6 +122,7 @@ This is a talk about measuring {\it physicists}: what they talk about and what t
 \vspace{0.25 cm}
 \mbox{\hspace{0.75 cm}\includegraphics[width=\linewidth]{google-flu-trends.png}}
 
+\begin{uncoverenv}<2->
 \vspace{-3.35 cm}
 \hspace{-0.25 cm}\begin{minipage}{0.3\linewidth}
 {\bf Google Flu Trends}
@@ -140,13 +141,60 @@ interpret as flu activity.
 (This was controversial.)
 \end{minipage}
 \vspace{3.35 cm}
+\end{uncoverenv}
 \end{frame}
 
-\begin{frame}{}
+\begin{frame}{Example: what happened here?}
+\vspace{0.25 cm}
+\textcolor{darkblue}{\mbox{\hspace{-0.5 cm}}GitHub stars versus time in IRIS-HEP projects}
 
+\vspace{0.25 cm}
+\begin{columns}
+\column{0.75\linewidth}
+\only<1-2>{\includegraphics[width=\linewidth]{irishep-as-stars-1.pdf}}\only<3->{\includegraphics[width=\linewidth]{irishep-as-stars-2.pdf}}
 
+\column{0.25\linewidth}
+\vspace{-0.5 cm}
 
+\uncover<2->{What we're trying to explain is a big, qualitative feature, not the little bumps.}
 
+\vspace{0.45 cm}
+\uncover<3->{Temporally coincides with this event:}
+
+\uncover<3->{\small\textcolor{blue}{\url{https://news.ycombinator.com/item?id=29576323}}}
+
+\vspace{0.45 cm}
+\uncover<4->{Is it causal?}
+
+\vspace{0.45 cm}
+\uncover<5->{It would be hard to believe it isn't.}
+
+\vspace{0.5 cm}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Stacked download statistics for Scikit-HEP and related packages}
+\vspace{-0.25 cm}
+\begin{columns}
+\column{1.2\linewidth}
+\mbox{\hspace{-1 cm}\only<1>{\includegraphics[width=\linewidth]{pip-allos-scikithep-log.pdf}}\only<2>{\includegraphics[width=\linewidth]{pip-macwin-scikithep-log.pdf}}}
+\end{columns}
+\end{frame}
+
+\begin{frame}{\mbox{ }}
+\Large
+\vspace{0.4 cm}
+
+Linux includes batch jobs, which sometimes \mintinline{bash}{pip install} the same package on thousands of workers.
+
+\vspace{0.5 cm}
+\uncover<2->{Selecting only MacOS and Windows removes most batch jobs, but it excludes some individual users (like me), probably with a behavioral bias.}
+
+\vspace{0.5 cm}
+\uncover<3->{Still, there's continuous testing jobs on MacOS and Windows.}
+
+\vspace{0.5 cm}
+\uncover<4->{Do we even {\it want} to exclude these things? What do we {\it want} the observable to quantify?}
 \end{frame}
 
 
