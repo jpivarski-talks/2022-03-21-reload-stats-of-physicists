@@ -148,7 +148,8 @@ interpret as flu activity.
 \vspace{0.25 cm}
 \begin{columns}
 \column{0.75\linewidth}
-\only<1-2>{\includegraphics[width=\linewidth]{irishep-as-stars-1.pdf}}\only<3->{\includegraphics[width=\linewidth]{irishep-as-stars-2.pdf}}
+% \only<1-2>{\includegraphics[width=\linewidth]{irishep-as-stars-1.pdf}}\only<3->{\includegraphics[width=\linewidth]{irishep-as-stars-2.pdf}}
+\includegraphics[width=\linewidth]{irishep-as-stars-3.png}
 
 \column{0.25\linewidth}
 \vspace{-0.5 cm}
@@ -194,23 +195,22 @@ Linux includes batch jobs, which sometimes \mintinline{bash}{pip install} the sa
 \uncover<4->{Do we even {\it want} to exclude these things? What do we {\it want} the observable to quantify?}
 \end{frame}
 
-\begin{frame}{How about this one: Python version in \only<1-2>{\mintinline{bash}{pip install uproot}}\only<3-4>{\mintinline{bash}{pip install numpy}}}
-\vspace{-0.25 cm}
-\begin{columns}
-\column{1.2\linewidth}
-\only<1>{\includegraphics[width=\linewidth]{pip-allos-pythonversion-uprootusers-lin.pdf}}\only<2>{\includegraphics[width=\linewidth]{pip-macwin-pythonversion-uprootusers-lin.pdf}}\only<3>{\includegraphics[width=\linewidth]{pip-allos-pythonversion-numpyusers-lin.pdf}}\only<4>{\includegraphics[width=\linewidth]{pip-macwin-pythonversion-numpyusers-lin.pdf}}
-\end{columns}
-\end{frame}
+%% \begin{frame}{How about this one: Python version in \only<1-2>{\mintinline{bash}{pip install uproot}}\only<3-4>{\mintinline{bash}{pip install numpy}}}
+%% \vspace{-0.25 cm}
+%% \begin{columns}
+%% \column{1.2\linewidth}
+%% \only<1>{\includegraphics[width=\linewidth]{pip-allos-pythonversion-uprootusers-lin.pdf}}\only<2>{\includegraphics[width=\linewidth]{pip-macwin-pythonversion-uprootusers-lin.pdf}}\only<3>{\includegraphics[width=\linewidth]{pip-allos-pythonversion-numpyusers-lin.pdf}}\only<4>{\includegraphics[width=\linewidth]{pip-macwin-pythonversion-numpyusers-lin.pdf}}
+%% \end{columns}
+%% \end{frame}
 
 \begin{frame}{More often useful when {\it comparing} two things}
 \vspace{0.25 cm}
 \Large
-\underline{Transition from ``old'' Awkward/Uproot/Coffea to ``new''}
-\vspace{0.5 cm}
-\begin{columns}
-\column{1.2\linewidth}
-\hspace{0.25 cm}\includegraphics[width=0.31\linewidth]{pip-allos-awkward-log.pdf}\includegraphics[width=0.31\linewidth]{pip-allos-uproot-log.pdf}\includegraphics[width=0.31\linewidth]{pip-allos-coffea-log.pdf}
-\end{columns}
+\underline{Transition from ``old'' \only<1>{Uproot}\only<2>{Awkward}\only<3>{Coffea} to ``new''}
+
+\begin{center}
+\only<1>{\includegraphics[width=0.9\linewidth]{pip-allos-uproot-log.pdf}}\only<2>{\includegraphics[width=0.9\linewidth]{pip-allos-awkward-log.pdf}}\only<3>{\includegraphics[width=0.9\linewidth]{pip-allos-coffea-log.pdf}}
+\end{center}
 \end{frame}
 
 \begin{frame}{Directed study: how are physicists using C++ and Python?}
@@ -230,44 +230,80 @@ Linux includes batch jobs, which sometimes \mintinline{bash}{pip install} the sa
 \end{center}
 \end{frame}
 
-\begin{frame}{\only<1>{Language use: C++, Python, and Jupyter}\only<2>{Packages: ROOT, Scientific Python, Uproot/Awkward}}
+\begin{frame}{\only<1-2>{Language use: C++, Python, and Jupyter}\only<3-4>{Packages: ROOT, Scientific Python, Uproot/Awkward}}
 \vspace{0.25 cm}
-\textcolor{darkblue}{\mbox{\hspace{-0.5 cm}}\only<1>{Number of non-fork GitHub repos created by CMS physicists (users who forked CMSSW)}\only<2>{Same sample, now counting regex matches for \mintinline{python}{import XYZ}, \mintinline{python}{from XYZ import}, etc.}}
+\textcolor{darkblue}{\mbox{\hspace{-0.5 cm}}\only<1-2>{Number of non-fork GitHub repos created by CMS physicists (users who forked CMSSW)}\only<3-4>{Same sample, now counting regex matches for \mintinline{python}{import XYZ}, \mintinline{python}{from XYZ import}, etc.}}
 
 \vspace{-0.35 cm}
 \begin{columns}
 \column{1.15\linewidth}
-\only<1>{\includegraphics[width=\linewidth]{gihub-language-fullstudy.pdf}}\only<2>{\includegraphics[width=\linewidth]{gihub-package-fullstudy.pdf}}
+\only<1>{\includegraphics[width=\linewidth]{gihub-language-fullstudy.pdf}}\only<2>{\includegraphics[width=\linewidth]{gihub-language-fullstudy-for-review.pdf}}\only<3>{\includegraphics[width=\linewidth]{gihub-package-fullstudy.pdf}}\only<4>{\includegraphics[width=\linewidth]{gihub-package-fullstudy-for-review.pdf}}
 \end{columns}
 \end{frame}
 
-\begin{frame}{This is an update of my earlier GitHub-CMSSW study}
-\vspace{0.5 cm}
-\large
+%% \begin{frame}{This is an update of my earlier GitHub-CMSSW study}
+%% \vspace{0.5 cm}
+%% \large
 
-\begin{enumerate}\setlength{\itemsep}{0.35 cm}
-\item Inclusively counting ``repo that contains a C++ file'' or ``a Python file,'' rather than GitHub's exclusive determination of ``repo language.''
+%% \begin{enumerate}\setlength{\itemsep}{0.35 cm}
+%% \item Inclusively counting ``repo that contains a C++ file'' or ``a Python file,'' rather than GitHub's exclusive determination of ``repo language.''
 
-\item Distinguishing between Python files that are CMSSW configurations and other Python files (GitHub doesn't).
+%% \item Distinguishing between Python files that are CMSSW configurations and other Python files (GitHub doesn't).
 
-\item I've downloaded all the repos, so I can run my own regex searches, rather than relying on GitHub's.
-\end{enumerate}
+%% \item I've downloaded all the repos, so I can run my own regex searches, rather than relying on GitHub's.
+%% \end{enumerate}
 
-\vspace{0.5 cm}
-\begin{uncoverenv}<2->
-We can do more: run clang-tidy/pylint? Features of libraries used?
+%% \vspace{0.5 cm}
+%% \begin{uncoverenv}<2->
+%% We can do more: run clang-tidy/pylint? Features of libraries used?
 
-\textcolor{blue}{\scriptsize\url{https://pivarski-princeton.s3.amazonaws.com/GitHub-CMSSW-user-nonfork-raw-data.tar}}
+%% \textcolor{blue}{\scriptsize\url{https://pivarski-princeton.s3.amazonaws.com/GitHub-CMSSW-user-nonfork-raw-data.tar}}
 
-\vspace{0.5 cm}
-\textcolor{gray}{\normalsize (Note: these are all public repos/public data.)}
-\end{uncoverenv}
-\end{frame}
+%% \vspace{0.5 cm}
+%% \textcolor{gray}{\normalsize (Note: these are all public repos/public data.)}
+%% \end{uncoverenv}
+%% \end{frame}
 
 \begin{frame}{Longer baseline: title/abstract matches in InspireHEP}
-\vspace{0.35 cm}
-\textcolor{darkblue}{Programming languages in \only<1>{CHEP}\only<2>{ACAT} papers}
+\vspace{0.5 cm}
+\begin{itemize}
+\item CHEP and ACAT are the two major conferences for computing in HEP.
+\item CHEP started in 1985 and includes 5\,407 proceedings.
+\item ACAT started in 1990 and includes 1\,446 proceedings.
+\item Search all the titles and abstracts for interesting keywords!
+\end{itemize}
 
+\vspace{0.25 cm}
+\begin{center}
+\includegraphics[width=0.5\linewidth]{inspirehep-api-website.png}
+\end{center}
+\end{frame}
+
+\begin{frame}{Machine learning in \only<1>{CHEP}\only<2>{ACAT} papers}
+\vspace{0.35 cm}
+
+\begin{columns}
+\column{1.05\linewidth}
+\only<1>{\includegraphics[width=\linewidth]{chep-papers-ml.pdf}}\only<2>{\includegraphics[width=\linewidth]{acat-papers-ml.pdf}}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Hardware accelerators in \only<1>{CHEP}\only<2>{ACAT} papers}
+\begin{columns}
+\column{1.05\linewidth}
+\only<1>{\includegraphics[width=\linewidth]{chep-papers-accelerator.pdf}}\only<2>{\includegraphics[width=\linewidth]{acat-papers-accelerator.pdf}}
+\end{columns}
+\end{frame}
+
+\begin{frame}{\mbox{ }}
+\vspace{1 cm}
+\begin{center}
+\Large What about language transitions? Fortran $\to$ C++ $\to$ Python?
+\end{center}
+\end{frame}
+
+\begin{frame}{Programming languages in \only<1>{CHEP}\only<2>{ACAT} papers}
+\vspace{0.35 cm}
 \begin{columns}
 \column{1.05\linewidth}
 \only<1>{\includegraphics[width=\linewidth]{chep-papers-language.pdf}}\only<2>{\includegraphics[width=\linewidth]{acat-papers-language.pdf}}
@@ -287,50 +323,21 @@ Note: PyROOT introduced in 2004 (v4.00/04).
 \end{columns}
 \end{frame}
 
-\begin{frame}{Longer baseline: title/abstract matches in InspireHEP}
-\vspace{0.35 cm}
-\textcolor{darkblue}{Programming paradigms in \only<1>{CHEP}\only<2>{ACAT} papers}
-
+\begin{frame}{Programming paradigms in \only<1>{CHEP}\only<2>{ACAT} papers}
 \begin{columns}
 \column{1.05\linewidth}
 \only<1>{\includegraphics[width=\linewidth]{chep-papers-paradigm.pdf}}\only<2>{\includegraphics[width=\linewidth]{acat-papers-paradigm.pdf}}
 \end{columns}
 \end{frame}
 
-\begin{frame}{Longer baseline: title/abstract matches in InspireHEP}
-\vspace{0.35 cm}
-\textcolor{darkblue}{Software frameworks in \only<1>{CHEP}\only<2>{ACAT} papers}
-
+\begin{frame}{Software frameworks in \only<1>{CHEP}\only<2>{ACAT} papers}
 \begin{columns}
 \column{1.05\linewidth}
 \only<1>{\includegraphics[width=\linewidth]{chep-papers-package-1.pdf}}\only<2>{\includegraphics[width=\linewidth]{acat-papers-package-1.pdf}}
 \end{columns}
 \end{frame}
 
-\begin{frame}{Longer baseline: title/abstract matches in InspireHEP}
-\vspace{0.35 cm}
-\textcolor{darkblue}{Machine learning in \only<1>{CHEP}\only<2>{ACAT} papers}
-
-\begin{columns}
-\column{1.05\linewidth}
-\only<1>{\includegraphics[width=\linewidth]{chep-papers-ml.pdf}}\only<2>{\includegraphics[width=\linewidth]{acat-papers-ml.pdf}}
-\end{columns}
-\end{frame}
-
-\begin{frame}{Longer baseline: title/abstract matches in InspireHEP}
-\vspace{0.35 cm}
-\textcolor{darkblue}{Hardware accelerators in \only<1>{CHEP}\only<2>{ACAT} papers}
-
-\begin{columns}
-\column{1.05\linewidth}
-\only<1>{\includegraphics[width=\linewidth]{chep-papers-accelerator.pdf}}\only<2>{\includegraphics[width=\linewidth]{acat-papers-accelerator.pdf}}
-\end{columns}
-\end{frame}
-
-\begin{frame}{Longer baseline: title/abstract matches in InspireHEP}
-\vspace{0.35 cm}
-\textcolor{darkblue}{Kinds of tasks in \only<1>{CHEP}\only<2>{ACAT} papers}
-
+\begin{frame}{Kinds of tasks in \only<1>{CHEP}\only<2>{ACAT} papers}
 \begin{columns}
 \column{1.05\linewidth}
 \only<1>{\includegraphics[width=\linewidth]{chep-papers-task.pdf}}\only<2>{\includegraphics[width=\linewidth]{acat-papers-task.pdf}}
@@ -346,24 +353,6 @@ Note: PyROOT introduced in 2004 (v4.00/04).
 \item This talk focused on proxy metrics, which are quantitative, but you have to pay close attention to what they're quantifying.
 
 \item Some clear trends and conclusions emerged. \mbox{Others are muddled.\hspace{-1 cm}}
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Conclusions}
-\Large
-\vspace{0.25 cm}
-Relatively clear trends/conclusions.
-
-\vspace{0.2 cm}
-\begin{itemize}\setlength{\itemsep}{0.12 cm}\large
-\item Scikit-HEP adoption increased by more than 10$\times$ since 2018. Maybe 100$\times$.
-\item Most physicists use Python 3.9, ahead of the wider (NumPy) community.
-\item The Awkward/Uproot/Coffea version update is done (more new than old).
-\item C++ use in CMS is {\it steady, not decreasing}, while scientific Python (NumPy/Matplotlib/Pandas/Jupyter) is increasing past that level.
-\item Python (in general, e.g.\ for configuration files), has been slowly increasing since 2000, at the same time as the abrupt Fortran $\to$ C++ switch.
-\item Declarative/columnar interest is increasing, but nothing like ``object oriented'' in the 1990's. ``Arrays'' are coming back (since Fortran).
-\item Machine learning is a {\it resurgence}, with more synonyms than in the 1990's. (GPUs/FPGAs on the same timescale.)
-\item ``Analysis'' has grown as a preoccupation at CHEP and ACAT.
 \end{itemize}
 \end{frame}
 
