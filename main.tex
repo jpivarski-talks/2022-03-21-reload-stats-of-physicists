@@ -31,8 +31,9 @@
 \xdefinecolor{darkred}{rgb}{0.7,0,0}
 \definecolor{darkgreen}{rgb}{0,0.6,0}
 \definecolor{mauve}{rgb}{0.58,0,0.82}
+\xdefinecolor{lightyellow}{rgb}{1.0,1.0,0.75}
 
-\title[2022-03-21-reload-stats-of-physicists]{Metrics of computing trends in NHEP}
+\title[2022-03-21-reload-stats-of-physicists]{Metrics of computing trends in HEP}
 \author{Jim Pivarski}
 \institute{Princeton University -- IRIS-HEP}
 \date{March 21, 2022}
@@ -57,27 +58,26 @@
 % START START START START START START START START START START START START START
 
 \begin{frame}{\mbox{ }}
-\large
 \vspace{0.5 cm}
 \begin{columns}
 \column{0.7\linewidth}
 This is a talk about measuring {\it physicists}: what they talk about and what they do for computing.
 
 \vspace{0.25 cm}
-\uncover<2->{Measuring people, such as advertising click-throughs, seemed odd to me when I first went from physics to data science, since the events are {\it not} independent and it would be hard to quantify errors.}
+\uncover<2->{Well-defined metrics around software are a clear objective of the NSF OAC SI2/CSSI program: we've taken that very seriously, both to try to gauge our impact and guide our evolving plans.}
 
 \vspace{0.25 cm}
-\uncover<3->{However, it can be a meaningful thing to do, taking all the caveats seriously, and certainly better than {\it guessing} or {\it assuming} we understand the community.}
+\uncover<3->{Before joining DIANA/HEP, I went from physics to data science, and had to get used to the idea of measuring people. It's a different kind of analysis: human events are {\it not} independent and systematic errors dominate.}
 
 \vspace{0.25 cm}
-\uncover<4->{Inspiration: read Sharon Traweek's anthropological study of physicists at SLAC and KEK in the 1970's. Physicists can be data points!}
+\uncover<4->{Nevertheless, these kinds of analyses are meaningful: social scientists do it all the time. Inspiration: read Sharon Traweek's anthropological study of physicists at SLAC and KEK in the 1970's. Physicists can be data points!}
 
 \column{0.3\linewidth}
 \uncover<4->{\includegraphics[width=\linewidth]{traweek-beamtimes-and-lifetimes.jpg}}
 \end{columns}
 \end{frame}
 
-\begin{frame}{User needs are very different from my expectations, 6 years ago}
+\begin{frame}{\only<1>{My expectation 6 years ago: Spark, Hadoop, functional big data}\only<2->{Completely changed by focus group/interview/survey feedback}}
 \vspace{0.5 cm}
 \begin{columns}
 \column{1.12\linewidth}
@@ -92,7 +92,7 @@ This is a talk about measuring {\it physicists}: what they talk about and what t
 \large
 \vspace{0.1 cm}
 \begin{itemize}\setlength{\itemsep}{0.25 cm}
-\item \textcolor{darkblue}{Qualitative:}
+\item<1-> \textcolor{darkblue}{Qualitative:}
 
 \vspace{0.05 cm}
 \begin{itemize}\large\setlength{\itemsep}{0.15 cm}
@@ -103,16 +103,18 @@ This is a talk about measuring {\it physicists}: what they talk about and what t
 \item \textcolor{darkblue}{History/documents:} \normalsize observational, rather than experimental, but this method can reach further into the past. \large
 \end{itemize}
 
-\item \textcolor{darkblue}{Quantitative:}
+\item<2-> \textcolor{darkblue}{Quantitative:}
 
 \vspace{0.05 cm}
 \begin{itemize}\large\setlength{\itemsep}{0.15 cm}
 \item \textcolor{darkblue}{Surveys:} \normalsize can get large, statistically meaningful datasets, at the cost of losing flexibility/openness to new ideas. Now you {\it are} filling in a vector space. \large
 
-\item \textcolor{darkblue}{Proxy metrics:} \normalsize can measure what people {\it do}, rather than what they {\it say}. \large
+\item \only<2>{\fcolorbox{white}{white}{\textcolor{darkblue}{Proxy metrics:} \normalsize can measure what people {\it do}, rather than what they {\it say}.}}\only<3>{\fcolorbox{black}{lightyellow}{\textcolor{darkblue}{Proxy metrics:} \normalsize can measure what people {\it do}, rather than what they {\it say}.}} \large
 \end{itemize}
 
 \end{itemize}
+
+\vspace{10 cm}
 \end{frame}
 
 \begin{frame}{Proxy metrics: high statistics, cautious interpretation}
@@ -143,7 +145,7 @@ interpret as flu activity.
 
 \begin{frame}{Example: what happened here?}
 \vspace{0.25 cm}
-\textcolor{darkblue}{\mbox{\hspace{-0.5 cm}}GitHub stars versus time in IRIS-HEP projects}
+\textcolor{darkblue}{\mbox{\hspace{-0.5 cm}}Number of stars on Awkward Array's GitHub repo versus time}
 
 \vspace{0.25 cm}
 \begin{columns}
@@ -166,6 +168,13 @@ interpret as flu activity.
 
 \vspace{0.5 cm}
 \end{columns}
+\end{frame}
+
+\begin{frame}{\mbox{ }}
+\vspace{1 cm}
+\begin{center}
+\Large What about counting downloads (a traditionally favorite metric)?
+\end{center}
 \end{frame}
 
 \begin{frame}{Stacked download statistics for Scikit-HEP and related packages}
@@ -203,10 +212,10 @@ Linux includes batch jobs, which sometimes \mintinline{bash}{pip install} the sa
 \begin{frame}{More often useful when {\it comparing} two things}
 \vspace{0.25 cm}
 \Large
-\underline{Transition from ``old'' \only<1>{Uproot}\only<2>{Awkward}\only<3>{Coffea} to ``new''}
+\underline{Transition from ``old'' \only<1>{Uproot}\only<2>{Awkward} to ``new''}
 
 \begin{center}
-\only<1>{\includegraphics[width=0.9\linewidth]{pip-allos-uproot-log.pdf}}\only<2>{\includegraphics[width=0.9\linewidth]{pip-allos-awkward-log.pdf}}\only<3>{\includegraphics[width=0.9\linewidth]{pip-allos-coffea-log.pdf}}
+\only<1>{\includegraphics[width=0.9\linewidth]{pip-allos-uproot-log.pdf}}\only<2>{\includegraphics[width=0.9\linewidth]{pip-allos-awkward-log.pdf}}
 \end{center}
 \end{frame}
 
@@ -286,6 +295,8 @@ Linux includes batch jobs, which sometimes \mintinline{bash}{pip install} the sa
 \end{frame}
 
 \begin{frame}{Hardware accelerators in \only<1>{CHEP}\only<2>{ACAT} papers}
+\vspace{0.35 cm}
+
 \begin{columns}
 \column{1.05\linewidth}
 \only<1>{\includegraphics[width=\linewidth]{chep-papers-accelerator.pdf}}\only<2>{\includegraphics[width=\linewidth]{acat-papers-accelerator.pdf}}
@@ -301,6 +312,7 @@ Linux includes batch jobs, which sometimes \mintinline{bash}{pip install} the sa
 
 \begin{frame}{Programming languages in \only<1>{CHEP}\only<2>{ACAT} papers}
 \vspace{0.35 cm}
+
 \begin{columns}
 \column{1.05\linewidth}
 \only<1>{\includegraphics[width=\linewidth]{chep-papers-language.pdf}}\only<2>{\includegraphics[width=\linewidth]{acat-papers-language.pdf}}
@@ -321,6 +333,8 @@ Note: PyROOT introduced in 2004 (v4.00/04).
 \end{frame}
 
 \begin{frame}{Programming paradigms in \only<1>{CHEP}\only<2>{ACAT} papers}
+\vspace{0.35 cm}
+
 \begin{columns}
 \column{1.05\linewidth}
 \only<1>{\includegraphics[width=\linewidth]{chep-papers-paradigm.pdf}}\only<2>{\includegraphics[width=\linewidth]{acat-papers-paradigm.pdf}}
@@ -328,6 +342,8 @@ Note: PyROOT introduced in 2004 (v4.00/04).
 \end{frame}
 
 \begin{frame}{Software frameworks in \only<1>{CHEP}\only<2>{ACAT} papers}
+\vspace{0.35 cm}
+
 \begin{columns}
 \column{1.05\linewidth}
 \only<1>{\includegraphics[width=\linewidth]{chep-papers-package-1.pdf}}\only<2>{\includegraphics[width=\linewidth]{acat-papers-package-1.pdf}}
@@ -335,6 +351,8 @@ Note: PyROOT introduced in 2004 (v4.00/04).
 \end{frame}
 
 \begin{frame}{Kinds of tasks in \only<1>{CHEP}\only<2>{ACAT} papers}
+\vspace{0.35 cm}
+
 \begin{columns}
 \column{1.05\linewidth}
 \only<1>{\includegraphics[width=\linewidth]{chep-papers-task.pdf}}\only<2>{\includegraphics[width=\linewidth]{acat-papers-task.pdf}}
@@ -345,7 +363,7 @@ Note: PyROOT introduced in 2004 (v4.00/04).
 \Large
 \vspace{0.5 cm}
 \begin{itemize}\setlength{\itemsep}{0.5 cm}
-\item Different ways of understanding people, including the NHEP software community: focus groups, interviews, historical documents, surveys, and proxy metrics.
+\item Different ways of understanding people, including the HEP software community: focus groups, interviews, historical documents, surveys, and proxy metrics.
 
 \item This talk focused on proxy metrics, which are quantitative, but you have to pay close attention to what they're quantifying.
 
